@@ -3,6 +3,8 @@ from sklearn.externals import joblib
 import pandas as pd
 import numpy as np
 
+
+
 app = Flask(__name__)
 
 mul_reg = open("multiple_linear_model.pkl", "rb") 
