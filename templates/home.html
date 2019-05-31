@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Prediction-Page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='images/mortarboard.png') }}">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+		<link href={{url_for('static',filename="fonts/material-design-iconic-font")}}>
+
+		<link href={{url_for('static',filename="fonts/material-design-iconic-font/css/material-design-iconic-font.css")}}>
+
+		<link href={{url_for('static',filename="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css")}}>
+
+		<link href={{url_for('static',filename="fonts/material-design-iconic-font/muli")}}>
+
+        <link href={{url_for('static',filename="fonts/material-design-iconic-font/poppins")}}>
+
+        <link href={{url_for('static',filename="fonts/material-design-iconic-font/fonts")}}>
+
+        <link href={{url_for('static',filename="fonts/material-design-iconic-font/css")}}>
+
+		<!-- STYLE CSS -->
+		<link href={{url_for('static',filename="css/style.css")}} rel="stylesheet" type="text/css">
+
+		<!-- ANIMATE CSS -->
+		<link href={{url_for('static',filename="css/animate.css")}} rel="stylesheet" type="text/css">
+
+
+	</head>
+	<body>
+	
+		<div class="wrapper">
+			<div class="image-holder animated fadeInLeft">
+			<img src="{{ url_for('static', filename = 'images/predict_mock_up.png') }}" width="330">
+				
+			</div>
+            <form method="POST" action="/predict">
+            	<div id="wizard" class="animated fadeInRight">
+            		<!-- SECTION 1 -->
+	                <h4></h4>
+	                <section>
+	                    <div class="form-row form-group">
+	                    	<div class="form-holder">
+	                    		<label for="">
+	                    		First Name *
+		                    	</label>
+	                    		<input type="text" class="form-control" name="first_name" id="first_name">
+	                    	</div>
+	                    	<div class="form-holder">
+	                    		<label for="">
+	                    		Last Name *
+		                    	</label>
+	                    		<input type="text" class="form-control" name="last_name" id="last_name">
+	                    	</div>
+	                    </div>	
+	                    
+	                </section>
+	                
+					<!-- SECTION 2 -->
+	                <h4></h4>
+	                <section>
+	                	<div class="form-row">
+	                    	<label for="">
+	                    		Gender *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Student's gender</p>
+	                    	<div class="form-holder">
+	                    		<select name="Gender" id="Gender" class="form-control">
+								    <option value="null" class="option">-</option>
+									<option value=0 class="option">female</option>
+									<option value=1 class="option">male</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+	                <!-- SECTION 3 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Age *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Student's Age</p>
+	                    	<div class="form-holder">
+	                    		<select name="Age" id="Age" class="form-control">
+								    <option value='null' class="option">-</option>
+									<option value=10 class="option">10</option>
+									<option value=11 class="option">11</option>
+									<option value=12 class="option">12</option>
+									<option value=13 class="option">13</option>
+									<option value=14 class="option">14</option>
+									<option value=15 class="option">15</option>
+									<option value=16 class="option">16</option>
+									<option value=17 class="option">17</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+					<!-- SECTION 4 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Location *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Student's home address type</p>
+	                    	<div class="form-holder">
+	                    		<select name="Location" id="Location" class="form-control">
+								   <option value="null" class="option">-</option>
+									<option value=0 class="option">Rural</option>
+									<option value=1 class="option">Urban</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+	                <!-- SECTION 5 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		P status *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Parent's cohabitation status</p>
+	                    	<div class="form-holder">
+	                    		<select name="Pstatus" id="Pstatus" class="form-control">
+								   <option value="null" class="option">-</option>
+									<option value=0 class="option">Apart</option>
+									<option value=1 class="option">Living together</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+					<!-- SECTION 6 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Medu *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Mother's education</p>
+	                    	<div class="form-holder">
+	                    		<select name="Medu" id="Medu" class="form-control">
+								   <option value="null" class="option">-</option>
+									<option value=0 class="option">None</option>
+									<option value=1 class="option">Lower Primary</option>
+									<option value=2 class="option">Upper Primary to JSS3</option>
+									<option value=3 class="option">SSCE level</option>
+									<option value=4 class="option">Higher education</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+					<!-- SECTION 7 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Fedu *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Father's education</p>
+	                    	<div class="form-holder">
+	                    		<select name="Fedu" id="Fedu" class="form-control">
+								   <option value="null" class="option">-</option>
+									<option value=0 class="option">None</option>
+									<option value=1 class="option">Lower Primary</option>
+									<option value=2 class="option">Upper Primary to JSS3</option>
+									<option value=3 class="option">SSCE level</option>
+									<option value=4 class="option">Higher education</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+					<!-- SECTION 8 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Traveltime *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Home to school travel time</p>
+	                    	<div class="form-holder">
+	                    		<select name="traveltime" id="traveltime" class="form-control">
+								   <option value="null" class="option">-</option>
+									<option value=1 class="option">Less than 15 min</option>
+									<option value=2 class="option">15 to 30 min</option>
+									<option value=3 class="option">30 min. to 1 hour</option>
+									<option value=4 class="option">more than 1 hour</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+					<!-- SECTION 9 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Studytime *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Weekly study time</p>
+	                    	<div class="form-holder">
+	                    		<select name="studytime" id="studytime" class="form-control">
+								 <option value="null" class="option">-</option>
+								  <option value=1 class="option">Less than 2 hours</option>
+									<option value=2 class="option">2 to 5 hours</option>
+									<option value=3 class="option">3 - 5 to 10 hours</option>
+									<option value=4 class="option">more than 10 hours</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+					<!-- SECTION 10 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Failures *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Number of past class failures</p>
+	                    	<div class="form-holder">
+	                    		<select name="failures" id="failures" class="form-control">
+								   <option value="null" class="option">-</option>
+									<option value=0 class="option">0</option>
+									<option value=1 class="option">1</option>
+									<option value=2 class="option">2</option>
+									<option value=3 class="option">3</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+					<h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		School-sup *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Extra educational support</p>
+	                    	<div class="form-holder">
+	                    		<select name="schoolsup" id="schoolsup" class="form-control">
+								   <option value="null" class="option">-</option>
+									<option value=0 class="option">No</option>
+									<option value=1 class="option">Yes</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+					<!-- SECTION 11 -->
+	                <h4></h4>
+	                <section>
+	                	<div class="form-row">
+						<p class = "form_desc"></p>
+	                    	<label for="">
+	                    		Fam-sup *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Family educational support</p>
+	                    	<div class="form-holder">
+	                    		<select name="famsup" id="famsup" class="form-control">
+								    <option value="null" class="option">-</option>
+									<option value=0 class="option">No</option>
+									<option value=1 class="option">Yes</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+	                <!-- SECTION 12 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Paid *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Extra paid classes within the course subject</p>
+	                    	<div class="form-holder">
+	                    		<select name="paid" id="paid" class="form-control">
+								    <option value="null" class="option">-</option>
+									<option value=0 class="option">No</option>
+									<option value=1 class="option">Yes</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+					<!-- SECTION 13 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Activities *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Extra-curricular activities</p>
+	                    	<div class="form-holder">
+	                    		<select name="activities" id="activities" class="form-control">
+								   <option value="null" class="option">-</option>
+									<option value=0 class="option">No</option>
+									<option value=1 class="option">Yes</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+					<!-- SECTION 14 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Nusery *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Attended nursery school</p>
+	                    	<div class="form-holder">
+	                    		<select name="nursery" id="nursery" class="form-control">
+								   <option value="null" class="option">-</option>
+									<option value=0 class="option">No</option>
+									<option value=1 class="option">Yes</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+					<!-- SECTION 15 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Higher *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Wants to take higher education</p>
+	                    	<div class="form-holder">
+	                    		<select name="higher" id="higher" class="form-control">
+								  <option value="null" class="option">-</option>
+									<option value=0 class="option">No</option>
+									<option value=1 class="option">Yes</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+					<!-- SECTION 16 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Internet *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Internet access at home</p>
+	                    	<div class="form-holder">
+	                    		<select name="internet" id="internet" class="form-control">
+								  <option value="null" class="option">-</option>
+									<option value=0 class="option">No</option>
+									<option value=1 class="option">Yes</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+					<!-- SECTION 17 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Fam-rel *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Quality of family relationships</p>
+	                    	<div class="form-holder">
+	                    		<select name="famrel" id="famrel" class="form-control">
+								   <option value="null" class="option">-</option>
+									<option value=1 class="option">Very Bad</option>
+									<option value=2 class="option">Bad</option>
+									<option value=3 class="option">Good</option>
+									<option value=4 class="option">Very Good</option>
+									<option value=5 class="option">Excellent</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+					<!-- SECTION 18 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Freetime *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Free time after school</p>
+	                    	<div class="form-holder">
+	                    		<select name="freetime" id="freetime" class="form-control">
+								<option value="null" class="option">-</option>
+								   <option value=1 class="option">Very low</option>
+									<option value=2 class="option">low</option>
+									<option value=3 class="option">Normal</option>
+									<option value=4 class="option">High</option>
+									<option value=5 class="option">Very High</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+					<!-- SECTION 19 -->
+	                <h4></h4>
+	                <section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Health *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">Current health status</p>
+	                    	<div class="form-holder">
+	                    		<select name="health" id="health" class="form-control">
+								   <option value="null" class="option">-</option>
+									<option value=1 class="option">Very Bad</option>
+									<option value=2 class="option">Bad</option>
+									<option value=3 class="option">Fair</option>
+									<option value=4 class="option">Good</option>
+									<option value=5 class="option">Very Good</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+					<!-- SECTION 20 -->
+					
+
+	                <!-- SECTION 21 -->
+	                <h4></h4>
+					<section>
+	                   <div class="form-row">
+	                    	<label for="">
+	                    		Absences *
+	                    	</label>
+							<h5 class="key">Description:</h5>
+							<p class = "form_desc">number of school absences</p>
+	                    	<div class="form-holder">
+	                    		<input type="number  " class="form-control" name="absences" id="absences">
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                </section>
+
+            	</div>
+            </form>
+		</div>
+
+		<script src={{url_for('static',filename="js/jquery-3.3.1.min.js")}} type="text/javascript"></script>
+		
+		<!-- JQUERY STEP -->
+		<!-- STYLE CSS -->
+		<script src={{url_for('static',filename="js/jquery.steps.js")}} type="text/javascript"></script>
+
+		<script src={{url_for('static',filename="js/main.js")}} type="text/javascript"></script>
+
+		
+</body>
+</html>
